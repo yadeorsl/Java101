@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class isArmstrong {
+    public static void main(String[] args) {
+        int a,i,bas,top,b;
+        i=0;
+        top=0;
+        Scanner inp =new Scanner(System.in);
+        a= inp.nextInt();
+        b=a;
+        while (a>0){
+            a/=10;
+            i++;
+        }
+        for (bas=i;bas>0;bas--){
+            top+=(b%10);
+            b/=10;
+        }
+        System.out.println(top);
+
+
+    }
+}
