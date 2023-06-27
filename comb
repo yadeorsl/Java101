@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class kombinasyon {
+    public static void main(String[] args) {
+        int n,r,fark,total,total2,i,j,k,comb;
+        total=1;
+        total2=1;
+        int total3=1;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("sayıyı giriniz");
+        n= inp.nextInt();
+        System.out.println("kaçlı kombinasyonu?");
+        r= inp.nextInt();
+        fark=n-r;
+        for (i=1;i<=n;i++){
+            total*=i;
+        }
+        for (j=1;j<=r;j++){
+            total2*=j;
+        }
+        for ( k=1;k<=fark;k++){
+            total3*=k;
+        }
+        comb=total/(total2*total3);
+        System.out.println(comb);
+
+
+    }
+}
