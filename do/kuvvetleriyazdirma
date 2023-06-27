@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class kuvvetleriYazdir {
+    public static void main(String[] args) {
+        int i,sayi,j;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("sayıyı gir");
+        sayi= inp.nextInt();
+        for(i=1;i<=sayi;i*=4){
+            System.out.println("4 ünkuvvetleri :"+i);
+        }
+
+        for(j=1;j<=sayi;j*=5){
+            System.out.println("5in kuveetleri:"+j);
+        }
+    }
+}
