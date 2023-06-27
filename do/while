@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class tekolmayan {
+    public static void main(String[] args) {
+        int sayi,top;
+        top=0;
+        Scanner inp=new Scanner(System.in);
+       do {
+           sayi=inp.nextInt();
+           if (sayi%4==0){
+               top+=sayi;
+           }
+
+        }while (sayi%2==0);
+        System.out.println(top);
+    }
+}
