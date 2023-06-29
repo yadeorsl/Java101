@@ -1,0 +1,62 @@
+import javax.swing.*;
+import java.util.Scanner;
+
+public class atm {
+    public static void main(String[] args) {
+        String parola, kullaniciadi;
+        int select;
+        int right = 3;
+        int balance = 1500;
+        while (right > 0) {
+
+            Scanner inp = new Scanner(System.in);
+            System.out.println("lutfen kullanici adınızı giriniz");
+            kullaniciadi = inp.nextLine();
+            System.out.println("parolanizi giriniz");
+            parola = inp.nextLine();
+
+        if (kullaniciadi.equals("patika") && parola.equals("123")) {
+            do {
+                System.out.println("yapmak istediğiniz işlemi seçiniz");
+                System.out.println("1-Para yatırma");
+                System.out.println("2-çekme");
+                System.out.println("3- bakiye sorgulama");
+                System.out.println("4-çıkış yapmak");
+
+
+                select = inp.nextInt();
+                switch (select) {
+                    case 1:
+                        System.out.println("para miktari:");
+                        int price = inp.nextInt();
+                        balance += price;
+                        break;
+                    case 2:
+                        System.out.println("çekmek istediğiniz para miktarını gir");
+                        price = inp.nextInt();
+                        if (price > balance) {
+                            System.out.println("bakiye yetersiz");
+                        } else {
+                            balance -= price;
+                        }
+                        break;
+                    case 3:
+                        System.out.println("bakiyeniz:" + balance);
+                        break;
+                    case 4:
+                        System.out.println("görüşmek üzere");
+                        break;
+                }
+            } while (select != 4);
+        }
+        else{
+                right--;
+                System.out.println("hatalı giriş tekrar deneyiniz");
+                if (right == 0) {
+                    System.out.println("hesabiniz bloke olmustur");
+                } else {
+                    System.out.println("kalan hakkınız" + right);
+                }
+            }
+
+        }}}
