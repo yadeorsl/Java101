@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class mukosayi {
+    public static void main(String[] args) {
+        int i,sayi,top=0;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("sorgulamak istediğiniz sayıyı giriniz");
+        sayi= inp.nextInt();
+        for (i=1;i<sayi;i++){
+            if(sayi%i==0){
+                top+=i;
+            }
+        }
+        if (sayi==top){
+            System.out.println(sayi+" mükemmeldir");
+        }else {
+            System.out.println(sayi+ "mükemmel sayi değildir");
+        }
+    }
+}
