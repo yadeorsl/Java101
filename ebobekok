@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class ebob {
+    public static void main(String[] args) {
+        int a,b,i,gcd,n1,n2;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("sayıları giriniz");
+        a= inp.nextInt();
+        n1=a;
+        b= inp.nextInt();
+        n2=b;
+        while(a!=b){
+            if (a>b)
+            {
+                a-=b;
+
+            }
+            else{
+                b-=a;
+            }
+        }
+        gcd=a;
+        int ekok=(n1*n2)/gcd;
+        System.out.println("ebob "+gcd);
+        System.out.println("ekok "+ekok);
+    }
+}
