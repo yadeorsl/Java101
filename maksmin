@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class maksmin {
+    public static void main(String[] args) {
+   int saymaSayisi,maks=0,min=0,sayi;
+   Scanner inp=new Scanner(System.in);
+        System.out.println("kay sayı girmek istediğinizi yazınız");
+        saymaSayisi= inp.nextInt();
+        while (saymaSayisi!=0){
+            sayi= inp.nextInt();
+            if (sayi>maks){
+                maks=sayi;
+            }
+            else {
+                min=sayi;
+            }
+            saymaSayisi--;
+
+        }
+        System.out.println("maksimum:"+maks);
+        System.out.println("minimum:"+min);
+
+    }
+}
