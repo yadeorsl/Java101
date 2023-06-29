@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class fibonacci {
+    public static void main(String[] args) {
+        int s1,s2,sum,i,n;
+        Scanner inp=new Scanner(System.in);
+        System.out.println("kaçıncı terime kadar olucağını seç");
+        n= inp.nextInt();
+        s1=0;
+        s2=1;
+      for (i=0;i<=n;i++){
+          System.out.println(s1);
+          sum=s1+s2;
+          s1=s2;
+          s2=sum;
+      }
+    }
+}
