@@ -1,0 +1,164 @@
+package metot;
+
+import java.util.Scanner;
+
+public class hesapMakinesi {
+    static void plus(){
+        Scanner inp=new Scanner(System.in);
+        int number,result=0,i=1;
+        while (true){
+            System.out.println(i++ +". sayi");
+            number= inp.nextInt();
+            if (number==0){
+                break;
+            }
+            result+=number;
+        }
+        System.out.println(result);
+    }
+    static void minus(){
+      Scanner inp=new Scanner(System.in);
+        System.out.println("kac adet sayi giriceksin");
+        int counter= inp.nextInt();
+        int number,i,result=0;
+    for (i=1;i<=counter;i++){
+        System.out.println(i+ ".sayi");
+        number= inp.nextInt();
+        if (i==1){
+            result+=number;
+        }
+        result-=number;
+    }
+        System.out.println("sonuç:"+result);
+
+    }
+    static void times(){
+        Scanner inp=new Scanner(System.in);
+        int i=1,number,result=1;
+        while (true){
+            System.out.println(i +". sayi");
+            number= inp.nextInt();
+            if (number==1){
+                break;
+            }
+            if(number==0){
+                result=0;
+                break;
+            }
+            result*=number;
+        }
+        System.out.println("sonuç"+result);
+    }
+      static void divided(){
+          Scanner inp=new Scanner(System.in);
+          System.out.println("kaç sayi giriceksiniz");
+          int counter= inp.nextInt();
+          double result=0.0,number;
+          for (int i=0;i<counter;i++){
+              System.out.println(i+". sayi");
+              number=inp.nextDouble();
+              if(i!=1&&number==0){
+                  System.out.println("böleni sıfır giremezsin");
+                  continue;
+              }
+              if (i==1){
+                  result=number;
+                  continue;
+              }
+              result/=number;
+
+          }
+          System.out.println("sonuç:"+result);
+      }
+      static void power(){
+          Scanner inp=new Scanner(System.in);
+          System.out.println("tabanı giriniz");
+          int base= inp.nextInt();
+          System.out.println("üssü giriniz");
+          int expo= inp.nextInt();
+          int result=1;
+          for (int i=1;i<=expo;i++){
+              result*=base;
+          }
+          System.out.println("sonuç:"+result);
+      }
+      static void fact(){
+          Scanner inp=new Scanner(System.in);
+          System.out.println("sayı gir");
+          int number= inp.nextInt();
+          int result=1;
+          for (int i=1;i<=number;i++){
+              result*=i;
+          }
+          System.out.println("sonuç:"+result);
+      }
+      static void mod(){
+          Scanner inp=new Scanner(System.in);
+          System.out.println("sayıyı gir");
+          int number= inp.nextInt();
+          System.out.println("bölünensayiyi giriniz");
+          int bolen= inp.nextInt();
+          int result=number%bolen;
+          System.out.println("sonuc"+result);
+      }
+      static void dikdoAlan(){
+        Scanner inp=new Scanner(System.in);
+        System.out.println("dikdörtgenin kısa kenarini gir");
+        int kisa= inp.nextInt();
+        System.out.println("uzun kenarı gir");
+        int uzun= inp.nextInt();
+        int cevre=2*(kisa+uzun);
+        int alan=kisa*uzun;
+        System.out.println("alan:"+ alan);
+          System.out.println("çevre:"+cevre);
+
+    }
+
+    public static void main(String[] args) {
+        Scanner inp=new Scanner(System.in);
+        int select;
+        String menu = "1- Toplama İşlemi\n"
+                + "2- Çıkarma İşlemi\n"
+                + "3- Çarpma İşlemi\n"
+                + "4- Bölme işlemi\n"
+                + "5- Üslü Sayı Hesaplama\n"
+                + "6- Faktoriyel Hesaplama\n"
+                + "7- Mod Alma\n"
+                + "8- Dikdörtgen Alan ve Çevre Hesabı\n"
+                + "0- Çıkış Yap";
+        do{
+            System.out.println("işlem seciniz");
+            System.out.println(menu);
+            select= inp.nextInt();
+            switch (select){
+                case 1:
+                    plus();
+                    break;
+                case 2:
+                    minus();
+                    break;
+                case 3:
+                    times();
+                    break;
+                case 4:
+                    divided();
+                    break;
+                case 5:
+                    power();
+                    break;
+                case 6:
+                    fact();
+                    break;
+                case 7:
+                    mod();
+                case 8:
+                    dikdoAlan();
+                case 0:
+                    break;
+                default:
+                    System.out.println("yanlış değer girdiniz");
+            }
+        }while (select!=0);
+    }
+
+}
