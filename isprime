@@ -1,0 +1,29 @@
+package metot;
+
+import java.util.Scanner;
+
+public class asalmi {
+    static int isPrime(int x,int i){
+        if(x<2){
+            return 0;
+        }
+        if(i==1){
+            return 1;
+        }
+        if (x%i==0){
+            return 0;
+        }
+        return isPrime(x,i-1);
+    }
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("sorgulamak istediginiz sayiyi giriniz");
+        int number= scan.nextInt();
+        if (isPrime(number,number/2)==0){
+            System.out.println("asal sayi degil");
+        }else {
+            System.out.println("asal sayi");
+        }
+    }
+}
