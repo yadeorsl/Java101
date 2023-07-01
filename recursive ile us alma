@@ -1,0 +1,22 @@
+package metot;
+
+import java.util.Scanner;
+
+public class powe {
+    static int pow(int base,int exp){
+        if(exp==0){
+            return 1;
+        }
+        return base*pow(base,exp-1);
+    }
+
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("sayiyi giriniz");
+        int b= scan.nextInt();
+        System.out.println("üssü giriniz");
+        int a= scan.nextInt();
+        System.out.println("sonuç:"+pow(b,a));
+
+    }
+}
