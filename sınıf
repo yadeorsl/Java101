@@ -1,0 +1,48 @@
+
+
+class student {
+    String name,stuNo;
+    int classes;
+    Course c1;
+    Course c2;
+    Course c3;
+    double average;
+    boolean isPass;
+    student(String name,int classes,String stuNo,Course c1,Course c2,Course c3){
+    this.name=name;
+    this.classes=classes;
+    this.stuNo=stuNo;
+    this.c1=c1;
+    this.c2=c2;
+    this.c3=c3;
+    this.average=0.0;
+    this.isPass=false;
+
+    }
+    void addBulkExamNote(int ort1,int ort2,int ort3){
+        if (ort1>=0&&ort1<=100){
+            this.c1.ort=ort1;
+        }
+        if (ort2>=0&&ort2<=100){
+            this.c2.ort=ort2;
+        }
+        if (ort3>=0&&ort3<=100){
+            this.c3.ort=ort3;
+        }
+    }
+    void printNote(){
+        System.out.println(c1.name+" Notu\t"+this.c1.ort);
+        System.out.println(c2.name+" Notu\t"+this.c2.ort);
+        System.out.println(c3.name+" Notu\t"+this.c3.ort);
+    }
+    void ispass(){
+        this.average=(this.c1.ort+this.c2.ort+this.c3.ort)/3.0;
+        if (this.average>=50){
+            System.out.println("sınıfı geçtinizz");
+        }
+        else{
+            System.out.println("kaldınız");
+        }
+        printNote();
+    }
+}
