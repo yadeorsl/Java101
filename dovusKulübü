@@ -1,0 +1,103 @@
+
+public class Main {
+    public static void main(String[] args) {
+        Fighter f1=new Fighter("a",10,120,100,100);
+        Fighter f2=new Fighter("b",20,85,85,150);
+
+        Match match= new Match(f1,f2,85,100);
+        match.run();
+        }
+    }
+public class Fighter {
+    String name;
+    int damage;
+    int health;
+    int weight;
+    int dodge;
+    int sayi;
+    Fighter(String name,int damage,int health,int weight,int dodge){
+        this.name=name;
+        this.damage=damage;
+        this.health=health;
+        this.weight=weight;
+        if (dodge>=0&&dodge<=100){
+            this.dodge=dodge;
+        }
+        else {
+            this.dodge=0;
+        }
+    }
+    int hit(Fighter foe){
+        System.out.println(this.name+ "=>" +foe.name+" " +this.damage+ " vurdu");
+        if (foe.isDodge()){
+            System.out.println(foe.name+" gelen hasarı blokladı");
+            return foe.health;
+        }
+        if (foe.health-this.damage<0){
+            return 0;
+        }
+        return foe.health-this.damage;
+
+    }
+    boolean isDodge(){
+        double randomV=Math.random()*100;
+        return this.dodge>=randomV;
+    }
+    boolean ilkKim(){
+        double sayi=Math.random()*2;
+        return sayi<0.5;
+    }
+
+
+}
+public class Match {
+    Fighter f1;
+    Fighter f2;
+    int minWeight;
+    int maxWeight;
+    Match(Fighter f1,Fighter f2,int minWeight,int maxWeight){
+        this.f1=f1;
+        this.f2=f2;
+        this.minWeight=minWeight;
+        this.maxWeight=maxWeight;
+
+    }
+    public void run(){
+        if(isCheck()){
+      while (this.f1.health>0&&this.f2.health>0){
+          System.out.println("yeni round");
+          if (f1.ilkKim()){
+              this.f2.health=this.f1.hit(f2);  }
+          if (isWin()){
+              break;
+          }else {
+        this.f1.health=this.f2.hit(f1);
+          }
+
+        if (isWin()){
+            break;
+        }
+          System.out.println(this.f1.health+ " anın kalan canı");
+          System.out.println(this.f2.health+ " bnın kalan canı");
+      }
+        }else {
+            System.out.println("oyuncuların sikletleri uymamakta");
+        }
+
+    }
+    boolean isCheck(){
+        return (this.f1.weight>=this.minWeight&&this.f1.weight<=this.maxWeight)&& (this.f2.weight>=this.minWeight&&this.f2.weight<=this.maxWeight);
+    }
+    boolean isWin(){
+        if (this.f1.health==0){
+            System.out.println("b kazandi");
+            return true;
+        }
+    if(this.f2.health==0){
+        System.out.println("a kazandi");
+        return true;
+    }
+    return false;
+    }
+
+}
