@@ -1,0 +1,15 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class arrp2 {
+    public static void main(String[] args) {
+        int[] list={8,5,12,6,39,56,47};
+        Scanner scan=new Scanner(System.in);
+        System.out.println("araştırmak istediğiniz sayıyı giriniz");
+        int k= scan.nextInt();
+        int i1=Arrays.binarySearch(list,k);
+        System.out.println(list[i1+1]);
+        System.out.println(list[i1-1]);
+
+    }
+}
