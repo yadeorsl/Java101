@@ -1,0 +1,18 @@
+
+
+import java.util.Scanner;
+
+public class arrayH {
+    public static void main(String[] args) {
+        double[] list={1,1/2,1/3,1/4};
+    Scanner scan=new Scanner(System.in);
+    double sum=0;
+    for(int i=0; i<list.length;i++){
+        sum+=list[i];
+
+    }
+    double har=(list.length)/(sum);
+        System.out.println(har);
+
+}
+  }
